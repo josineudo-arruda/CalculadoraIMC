@@ -1,6 +1,6 @@
 # Calculadora IMC
 
-Aplicação dotnet console paragit  o cálculo do IMC
+Aplicação dotnet console para o cálculo do IMC
 
 ## Funcionalidades
 
