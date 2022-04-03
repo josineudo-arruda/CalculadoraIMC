@@ -6,6 +6,7 @@ Aplicação dotnet console para o cálculo do IMC
 
 - Calcula o IMC
 - Apresenta a situação do usuário
+- Caso seja necessário apresenta a quantidade de quilos necessários para chegar a um peso saudável
 
 ## Tecnologias usadas
 
