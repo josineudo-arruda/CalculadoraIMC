@@ -18,47 +18,48 @@ public class Individuo
         Altura = altura;
     }
 
-    public void Situacao()
+    public string Condicao()
     {
         if(Imc < 17.00)
         {
-            Console.WriteLine("Situação: Muito abaixo do peso");
+            return "Situação: Muito abaixo do peso";
         }
         else if(Imc >= 17.00 && Imc < 18.50)
         {
-            Console.WriteLine("Situação: Abaixo do peso");
+            return "Situação: Abaixo do peso";
         }
         else if(Imc >= 18.50 && Imc < 25.00)
         {
-            Console.WriteLine("Situação: Peso normal");
+            return "Situação: Peso normal";
         }
         else if(Imc >= 25.00 && Imc < 30.00)
         {
-            Console.WriteLine("Situação: Acima do peso");
+            return "Situação: Acima do peso";
         }
         else if(Imc >= 30.00 && Imc < 35.00)
         {
-            Console.WriteLine("Situação: Obesidade I");
+            return "Situação: Obesidade I";
         }
         else if(Imc >= 35.00 && Imc < 40.00)
         {
-            Console.WriteLine("Situação: Obesidade II (severa)");
+            return "Situação: Obesidade II (severa)";
         }
         else
         {
-            Console.WriteLine("Situação: Obesidade III (mórbida)");
+            return "Situação: Obesidade III (mórbida)";
         }
+    }
 
-        double pesoIdealAbaixo = 18.50 * (Altura * Altura);
-        double pesoIdealAcima = 24.99 * (Altura * Altura);
-
-        if(Peso <= pesoIdealAbaixo)
+    public string SituacaoSaudavel()
+    {
+        if(Peso <= (18.50 * (Altura * Altura)))
         {
-            Console.WriteLine("Você necessita ganhar {0} kg para chegar no ao peso 'ideal'", pesoIdealAbaixo - Peso);
+            return ($"Você necessita ganhar {(18.50 * (Altura * Altura)) - Peso} kg para chegar no ao peso 'ideal'");
         }
-        else if(Peso >= pesoIdealAcima)
+        else if(Peso >= (24.99 * (Altura * Altura)))
         {
-            Console.WriteLine("Você necessita perder {0} kg para chegar no ao peso 'ideal'", Peso - pesoIdealAcima);
+            return ($"Você necessita perder {Peso - (24.99 * (Altura * Altura))} kg para chegar no ao peso 'ideal'");
         }
+        return "0";
     }
 }
